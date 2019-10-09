@@ -1,0 +1,63 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 10/8/19 8:53 PM
+Description: Exception in server tick loop
+
+java.lang.IllegalArgumentException: ChunkNibbleArrays should be 2048 bytes not: 0
+	at net.minecraft.world.chunk.NibbleArray.<init>(SourceFile:16)
+	at net.minecraft.world.chunk.storage.AnvilChunkLoader.func_75823_a(AnvilChunkLoader.java:449)
+	at net.minecraft.world.chunk.storage.AnvilChunkLoader.checkedReadChunkFromNBT__Async(AnvilChunkLoader.java:128)
+	at net.minecraft.world.chunk.storage.AnvilChunkLoader.loadChunk__Async(AnvilChunkLoader.java:92)
+	at net.minecraftforge.common.chunkio.ChunkIOProvider.run(ChunkIOProvider.java:70)
+	at net.minecraftforge.common.chunkio.ChunkIOExecutor.syncChunkLoad(ChunkIOExecutor.java:92)
+	at net.minecraft.world.gen.ChunkProviderServer.loadChunk(ChunkProviderServer.java:118)
+	at net.minecraft.world.gen.ChunkProviderServer.func_186028_c(ChunkProviderServer.java:89)
+	at net.minecraft.world.gen.ChunkProviderServer.func_186025_d(ChunkProviderServer.java:135)
+	at net.minecraft.server.MinecraftServer.func_71222_d(MinecraftServer.java:344)
+	at net.minecraft.server.integrated.IntegratedServer.func_71247_a(IntegratedServer.java:142)
+	at net.minecraft.server.integrated.IntegratedServer.func_71197_b(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Mac OS X (x86_64) version 10.13.6
+	Java Version: 1.8.0_74, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1034380376 bytes (986 MB) / 1476395008 bytes (1408 MB) up to 2147483648 bytes (2048 MB)
+	JVM Flags: 7 total; -Xmx2G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 29, tallocated: 77
+	FML: MCP 9.42 Powered by Forge 14.23.5.2838 15 mods loaded, 15 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID             | Version      | Source                                        | Signature                                |
+	|:------ |:-------------- |:------------ |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft      | 1.12.2       | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp            | 9.42         | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML            | 8.0.99.99    | forge-1.12.2-14.23.5.2838.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge          | 14.23.5.2838 | forge-1.12.2-14.23.5.2838.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | biomesoplenty  | 7.0.1.2441   | BiomesOPlenty-1.12.2-7.0.1.2441-universal.jar | None                                     |
+	| LCHIJA | cfm            | 6.3.0        | cfm-6.3.0-mc1.12.2.jar                        | None                                     |
+	| LCHIJA | chiselsandbits | 14.22        | Chisels-and-Bits-Mod-1.12.2.jar               | None                                     |
+	| LCHIJA | harvestcraft   | 1.12.2w      | HarvestCraft-Mod-1.12.2.jar                   | None                                     |
+	| LCHIJA | ichunutil      | 7.2.1        | iChunUtil-1.12.2-7.2.1.jar                    | 4db5c2bd1b556f252a5b8b54b256d381b2a0a6b8 |
+	| LCHIJA | radixcore      | 1.12.x-2.2.1 | RadixCore-1.12.2.jar                          | None                                     |
+	| LCHIJA | mca            | 1.12.2-5.3.1 | MCA-1.12.x-5.3.1-universal.jar                | None                                     |
+	| LCHIJA | mocreatures    | 12.0.5       | Mo-Creatures-Mod-1.12.2.jar                   | None                                     |
+	| LCHIJA | morph          | 7.1.3        | Morphing-Mod-1.12.2.jar                       | 4db5c2bd1b556f252a5b8b54b256d381b2a0a6b8 |
+	| LCHIJA | bspkrscore     | at_0.9       | TreeCapitator-Mod-1.12 (1).jar                | None                                     |
+	| LCHIJA | treecapitator  | at_0.9       | TreeCapitator-Mod-1.12 (1).jar                | None                                     |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+ 
